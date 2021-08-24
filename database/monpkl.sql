@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 22, 2021 at 10:56 AM
--- Server version: 10.4.13-MariaDB
--- PHP Version: 7.3.29
+-- Generation Time: Aug 24, 2021 at 08:35 AM
+-- Server version: 10.4.19-MariaDB
+-- PHP Version: 8.0.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -111,8 +111,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Admin', 'admin@gmail.com', '2021-08-22 03:03:05', '$2y$10$eRnSVZzwoUBDyG/5gqU2leJd5JOCSNUBoOr9n8M.JuFIypNc9F1N2', NULL, '2021-08-22 03:03:06', '2021-08-22 03:03:06'),
-(2, 'Admin', 'admin1@gmail.com', '2021-08-22 03:03:26', '$2y$10$Z.OLEAvwVvDFUWjZuDdIYOnCNENSXTT2B.1Llcx/nZGQXZmlzx.IS', NULL, '2021-08-22 03:03:26', '2021-08-22 03:03:26');
+(1, 'Akmal Adi Saputra', 'saputraakmal02@gmail.com', '2021-08-23 23:33:48', '$2y$10$Xoqfs0sDWL4sPK.zSI2h5O1K3EwMzjQRYk07HaHHOTqMiup/qMAzy', NULL, '2021-08-23 23:33:48', '2021-08-23 23:33:48');
 
 --
 -- Indexes for dumped tables
@@ -178,7 +177,7 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
