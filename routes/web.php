@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,7 +16,9 @@ use App\Http\Controllers\PagesController;
 |
 */
 
-Route::get('/', [AuthController::class, 'showFormLogin'])->name('login');
+//alihkan ke landing page (AKMAL)
+Route::get('/', [HomeController::class, 'landingpage']);
+// Route::get('/', [AuthController::class, 'showFormLogin'])->name('login');
 Route::get('login', [AuthController::class, 'showFormLogin'])->name('login');
 Route::post('login', [AuthController::class, 'login']);
 Route::get('register', [AuthController::class, 'showFormRegister'])->name('register');
