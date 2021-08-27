@@ -34,4 +34,5 @@ Route::group(['middleware' => 'auth'], function () {
 });
 
 // ROUTING PERUSAHAAN (AKMAL)
+//OK
 Route::resource('companies', CompanyController::class);
