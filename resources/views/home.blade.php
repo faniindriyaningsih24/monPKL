@@ -13,5 +13,5 @@
         <h5>Selamat datang di halaman dashboard, <strong>{{ Auth::user()->name }}</strong></h5><br>
       </div>
     </section>
-  </div>
+</div>
 @endsection

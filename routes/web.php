@@ -31,8 +31,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('home', [PagesController::class, 'home'])->name('home');
     Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 
+    // ROUTING PERUSAHAAN (AKMAL)
+    //OK
+    Route::resource('companies', CompanyController::class);
 });
 
-// ROUTING PERUSAHAAN (AKMAL)
-//OK
-Route::resource('companies', CompanyController::class);

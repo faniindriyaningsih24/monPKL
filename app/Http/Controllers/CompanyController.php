@@ -15,7 +15,7 @@ class CompanyController extends Controller
     public function index()
     {
         //mengambil data terakhir dan pagination 5 list
-        $companies = Company::latest()->paginate(5);
+        $companies = Company::latest()->paginate(10);
 
         // Mengirim variabel $company ke halaman view company
         //include dengam number index

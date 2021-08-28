@@ -3,11 +3,10 @@
 @section('title', 'Perusahaan')
 
 @section('container')
-
 <div class="main-content">
     <section class="section">
         <div class="section-header">
-            <h5>HALAMAN INDEX PERUSAHAAN</h5>
+            <h1>Daftar Perusahaan</h1>
         </div>
     </section>
 
@@ -18,6 +17,7 @@
         </div>
         @endif
 
+        <a href="companies/create" class="btn btn-sm btn-info mb-3 fa fa-plus px-2"></a>
         <table class="table table-bordered">
             <tr>
                 <th width="20px" class="text-center">No</th>
@@ -30,13 +30,16 @@
             @foreach ($companies as $c)
             <tr>
                 <td class="text-center">{{ ++$i }}</td>
-                <td>{{ $c->title }}</td>
+                <td>{{ $c->nama}}</td>
+                <td>{{ $c->kontak}}</td>
+                <td>{{ $c->pimpinan}}</td>
+                <td>{{ $c->alamat}}</td>
                 <td class="text-center">
-                    <form action="{{ route('posts.destroy',$c->id) }}" method="POST">
+                    <form action="{{ route('companies.destroy', $c->id) }}" method="POST">
 
-                        <a class="btn btn-info btn-sm" href="{{ route('posts.show',$c->id) }}">Show</a>
+                        <a class="btn btn-info btn-sm" href="{{ route('companies.show', $c->id) }}">Show</a>
 
-                        <a class="btn btn-primary btn-sm" href="{{ route('posts.edit',$c->id) }}">Edit</a>
+                        <a class="btn btn-primary btn-sm" href="{{ route('companies.edit', $c->id) }}">Edit</a>
 
                         @csrf
                         @method('DELETE')

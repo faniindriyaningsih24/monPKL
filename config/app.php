@@ -105,8 +105,9 @@ return [
     | localized telephone numbers, street address information and more.
     |
     */
-
-    'faker_locale' => 'en_US',
+    
+    //generate fake data bahasa indonesia dengan faker (AKMAL)
+    'faker_locale' => 'id_ID',
 
     /*
     |--------------------------------------------------------------------------
