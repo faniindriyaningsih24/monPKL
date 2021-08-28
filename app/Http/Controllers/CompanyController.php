@@ -19,7 +19,7 @@ class CompanyController extends Controller
 
         // Mengirim variabel $company ke halaman view company
         //include dengam number index
-        return view('companies.index', compact('companies'))->with('i', (request()->input('page', 1) - 1) * 5);
+        return view('companies.index', compact('companies'))->with('i', (request()->input('page', 1) - 1) * 10);
     }
 
     /**
