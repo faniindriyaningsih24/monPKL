@@ -20,12 +20,12 @@
         <a href="companies/create" class="btn btn-sm btn-info mb-3 fa fa-plus px-2"></a>
         <table class="table table-bordered">
             <tr>
-                <th width="20px" class="text-center">No</th>
+                <th width="10px" class="text-center">No</th>
                 <th>Nama</th>
                 <th>Kontak</th>
                 <th>Pimpinan</th>
                 <th>Alamat</th>
-                <th width="280px"class="text-center">Action</th>
+                <th width="120px" class="text-center">Action</th>
             </tr>
             @foreach ($companies as $c)
             <tr>
@@ -37,14 +37,12 @@
                 <td class="text-center">
                     <form action="{{ route('companies.destroy', $c->id) }}" method="POST">
 
-                        <a class="btn btn-info btn-sm" href="{{ route('companies.show', $c->id) }}">Show</a>
-
-                        <a class="btn btn-primary btn-sm" href="{{ route('companies.edit', $c->id) }}">Edit</a>
+                        <a class="btn btn-primary btn-sm fas fa-edit mr-1" href="{{ route('companies.edit', $c->id) }}"></a>
 
                         @csrf
                         @method('DELETE')
 
-                        <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">Delete</button>
+                        <button type="submit" class="btn btn-danger btn-sm fas fa-trash-alt ml-1" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')"></button>
                     </form>
                 </td>
             </tr>

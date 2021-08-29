@@ -43,7 +43,9 @@ class CompanyController extends Controller
         //membuat validasi untuk nama dan kontak perusahaan wajib diisi;
         $request->validate( [
             'nama' => 'required',
-            'kontak' => 'required'
+            'kontak' => 'required',
+            'pimpinan' => 'required',
+            'alamat' => 'required'
         ] );
 
         //insert ke DB
@@ -58,10 +60,6 @@ class CompanyController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Company $company)
-    {
-        return view('companies.show', compact('company'));
-    }
 
     /**
      * Show the form for editing the specified resource.
@@ -86,7 +84,9 @@ class CompanyController extends Controller
         //validasi update
         $request->validate( [
             'nama' => 'required',
-            'kontak' => 'required'
+            'kontak' => 'required',
+            'pimpinan' => 'required',
+            'alamat' => 'required'
         ] );
 
         //update data
