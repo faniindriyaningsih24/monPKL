@@ -6,7 +6,7 @@
 <div class="main-content">
     <section class="section">
         <div class="section-header">
-            <h1>Tambah Perusahaan</h1>
+            <h1>Tambah Company</h1>
         </div>
 
         <div class="section-body">
@@ -24,36 +24,40 @@
             @endif
 
             <div class="row">
-                <div class="col-8">
+                <div class="col-12 col-md-12 col-lg-12">
                     <form action="{{ route('companies.store') }}" method="POST">
-                        @csrf
-                        <div class="input-group mb-3">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text" id="basic-addon1">Nama Perusahaan</span>
-                            </div>
-                            <input type="text" class="form-control" placeholder="Nama Perusahaan" name="nama">
-                        </div>
-                        <div class="input-group mb-3">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text" id="basic-addon1">Kontak</span>
-                            </div>
-                            <input type="text" class="form-control" placeholder="Email/Telepon" name="kontak">
-                        </div>
-                        <div class="input-group mb-3">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text" id="basic-addon1">Pimpinan</span>
-                            </div>
-                            <input type="text" class="form-control" placeholder="Nama Pimpinan" name="pimpinan">
-                        </div>
-                        <div class="input-group mb-4">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text" id="inputGroup-sizing-lg">Alamat</span>
-                            </div>
-                            <textarea class="form-control" name="alamat"></textarea>
-                        </div>
-                        <div class="input-group">
-                            <input type="submit" value="Tambah" class="btn btn-success mr-2">
-                            <input type="reset" value="Batal" class="btn btn-danger ml-2">
+                    @csrf
+                        <div class="card">
+                                <div class="card-body">
+                                    <div class="form-group">
+                                        <label>Nama Perusahaan</label>
+                                        <input type="text" class="form-control" placeholder="Nama Perusahaan" name="namaPerusahaan">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Jenis Usaha</label>
+                                        <input type="text" class="form-control" placeholder="Jenis Usaha" name="jenisUsaha">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Nama Pimpinan</label>
+                                        <input type="text" class="form-control" placeholder="Nama Pimpinan" name="namaPimpinan">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Nama HRD</label>
+                                        <input type="text" class="form-control" placeholder="Nama HRD" name="namaHrd">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Alamat</label>
+                                        <textarea type="text" class="form-control" placeholder="Alamat" name="alamat"></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>No Hp / Tlp</label>
+                                        <input type="text" class="form-control" placeholder="No Hp / Tlp" name="noHpPerusahaan">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="submit" value="Tambah" class="btn btn-success mr-2">
+                                        <input type="reset" value="Batal" class="btn btn-danger ml-2">
+                                    </div>
+                                </div>
                         </div>
                     </form>
                 </div>

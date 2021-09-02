@@ -18,6 +18,7 @@ class CreateMentorsTable extends Migration
             $table->string('namaMentors');
             $table->string('email');
             $table->string('noHpMentors',13);
+            $table->text('photoMentors');
             $table->text('parafMentors');
             $table->timestamps();
         });

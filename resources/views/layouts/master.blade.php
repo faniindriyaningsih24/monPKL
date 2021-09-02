@@ -46,7 +46,16 @@
             <div class="dropdown-menu dropdown-menu-right">
               <div class="dropdown-title"></div>
               <a href="features-profile.html" class="dropdown-item has-icon">
-                <i class="far fa-user"></i> Profile
+                <i class="far fa-user"></i> Profile - 
+
+                <!-- Start Setting Level Name  -->
+                @if (auth()->user()->idLevel == 1)
+                    Admin
+                @elseif (auth()->user()->idLevel == 2)
+                  Guru
+                @endif
+                <!-- End Setting Level Name  -->
+
               </a>
               <div class="dropdown-divider"></div>
               <a href="{{ route('logout') }}" class="dropdown-item has-icon text-danger">
@@ -68,13 +77,22 @@
           <ul class="sidebar-menu">
             <li class="menu-header">Dashboard</li>
             <li><a class="nav-link" href="{{ route('home') }}"><i class="fas fa-pencil-ruler"></i> <span>Dashboard</span></a></li>
-            <li class="menu-header">Starter</li>
-            <li class="dropdown">
-              <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i> <span>Tambah Data</span></a>
-              <ul class="dropdown-menu">
-                <li><a class="nav-link" href="/companies">Tambah Perusahaan</a></li>
-              </ul>
-            </li>        
+            <li class="menu-header">Pages</li>
+           
+            <!-- Start setting navigation  -->
+            @if (auth()->user()->idLevel == 1)
+              <li><a class="nav-link" href="/companies"><i class="fas fa-pencil-ruler"></i> <span>Perusahaan</span></a></li>
+            @elseif(auth()->user()->idLevel == 2)
+              <li class="dropdown">
+                <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i> <span>Tearcher</span></a>
+                <ul class="dropdown-menu">
+                  <li><a class="nav-link" href="/companies">Tambah Perusahaan</a></li>
+                </ul>
+              </li>
+            @endif
+            <!-- End setting navigation  -->
+            
+          </ul>
         </aside>
       </div>
 

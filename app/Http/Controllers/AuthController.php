@@ -60,7 +60,19 @@ class AuthController extends Controller
             Session::flash('error', 'Email atau password salah');
             return redirect()->route('login');
         }
+
+        // if (Auth::user()->idLevel == 1 ) {
+        //     return redirect()->route('home');
+        // }
+        // elseif (Auth::user()->idLevel == 2 ) {
+        //     return redirect()->route('home');
+        // } 
+        // else { // false
   
+        //     //Login Fail
+        //     Session::flash('error', 'Anda belum terdaftar');
+        //     return redirect()->route('login');
+        // }
     }
 
     public function showFormRegister()
@@ -73,7 +85,8 @@ class AuthController extends Controller
         $rules = [
             'name'                  => 'required|min:3|max:35',
             'email'                 => 'required|email|unique:users,email',
-            'password'              => 'required|confirmed'
+            'password'              => 'required',
+            'idLevel'               => 'required'
         ];
   
         $messages = [
@@ -84,7 +97,8 @@ class AuthController extends Controller
             'email.email'           => 'Email tidak valid',
             'email.unique'          => 'Email sudah terdaftar',
             'password.required'     => 'Password wajib diisi',
-            'password.confirmed'    => 'Password tidak sama dengan konfirmasi password'
+            'password.confirmed'    => 'Password tidak sama dengan konfirmasi password',
+            'idLevel.required'      => 'Level wajib diisi'
         ];
   
         $validator = Validator::make($request->all(), $rules, $messages);
@@ -97,6 +111,7 @@ class AuthController extends Controller
         $user->name = ucwords(strtolower($request->name));
         $user->email = strtolower($request->email);
         $user->password = Hash::make($request->password);
+        $user->idLevel = ($request->idLevel);
         $user->email_verified_at = \Carbon\Carbon::now();
         $simpan = $user->save();
   

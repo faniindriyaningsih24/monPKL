@@ -18,6 +18,7 @@ class CreateTeachersTable extends Migration
             $table->string('namaGuru');
             $table->string('email');
             $table->string('noHpGuru',13);
+            $table->text('photoGuru');
             $table->text('parafGuru');
             $table->timestamps();
         });

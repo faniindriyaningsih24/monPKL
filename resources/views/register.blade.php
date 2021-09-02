@@ -84,14 +84,13 @@
                       </div>
 
                       <div class="form-group">
-                        <div class="d-block">
-                            <label for="" class="control-label">Konfirmasi Password</label>
-                        </div>
-                        <input id="" type="password" class="form-control" name="password_confirmation" tabindex="4">
+                        <label for="">Level</label>
+                        <input id="" type="text" class="form-control" name="idLevel" tabindex="4" required autofocus>
                         <div class="invalid-feedback">
-                          please fill in your password confimation
+                          Please fill in your level
                         </div>
                       </div>
+                      
     
                       <div class="form-group">
                         <button type="submit" class="btn btn-primary btn-lg btn-block" tabindex="5">

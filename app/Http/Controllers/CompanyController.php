@@ -42,10 +42,12 @@ class CompanyController extends Controller
     {
         //membuat validasi untuk nama dan kontak perusahaan wajib diisi;
         $request->validate( [
-            'nama' => 'required',
-            'kontak' => 'required',
-            'pimpinan' => 'required',
-            'alamat' => 'required'
+            'namaPerusahaan' => 'required',
+            'jenisUsaha' => 'required',
+            'namaPimpinan' => 'required',
+            'namaHrd' => 'required',
+            'alamat' => 'required',
+            'noHpPerusahaan' => 'required',
         ] );
 
         //insert ke DB
@@ -83,10 +85,12 @@ class CompanyController extends Controller
     {
         //validasi update
         $request->validate( [
-            'nama' => 'required',
-            'kontak' => 'required',
-            'pimpinan' => 'required',
-            'alamat' => 'required'
+            'namaPerusahaan' => 'required',
+            'jenisUsaha' => 'required',
+            'namaPimpinan' => 'required',
+            'namaHrd' => 'required',
+            'alamat' => 'required',
+            'noHpPerusahaan' => 'required',
         ] );
 
         //update data

@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CompanyController;
+use Illuminate\Routing\RouteGroup;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,9 +31,19 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('home', [PagesController::class, 'home'])->name('home');
     Route::get('logout', [AuthController::class, 'logout'])->name('logout');
-
-    // ROUTING PERUSAHAAN (AKMAL)
-    //OK
+    
     Route::resource('companies', CompanyController::class);
 });
+
+//HAK AKSES ADMIN
+// Route::group(['middleware' => 'admin'], function () {
+//     Route::resource('companies', CompanyController::class);
+
+// });
+
+//HAK AKSES GURU
+// Route::group(['middleware' => 'guru'], function () {
+//     Route::resource('companies', CompanyController::class);
+
+// });
 

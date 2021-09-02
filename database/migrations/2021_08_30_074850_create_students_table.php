@@ -14,7 +14,7 @@ class CreateStudentsTable extends Migration
     public function up()
     {
         Schema::create('students', function (Blueprint $table) {
-            $table->bigInteger('nis',$autoIncrement = false, 'primary-key');
+            $table->bigInteger('nis',$autoIncrement = false);
             $table->string('namaSiswa');
             $table->string('kompetensiKeahlian');
             $table->string('kelas');
@@ -29,6 +29,7 @@ class CreateStudentsTable extends Migration
             $table->string('namaOrtu');
             $table->text('alamatOrtu');
             $table->string('noHpOrtu', 13);
+            $table->text('photoSiswa');
             $table->text('parafSiswa');
             $table->timestamps();
         });

@@ -14,11 +14,13 @@ class CreateCompaniesTable extends Migration
     public function up()
     {
         Schema::create('companies', function (Blueprint $table) {
-            $table->id();
-            $table->string('nama');
-            $table->string('kontak');
-            $table->string('pimpinan');
+            $table->bigInteger('idPerusahaan');
+            $table->string('namaPerusahaan');
+            $table->string('jenisUsaha');
+            $table->string('namaPimpinan');
+            $table->string('namaHrd');
             $table->text('alamat');
+            $table->string('noHpPerusahaan',13);
             $table->timestamps();
         });
     }
