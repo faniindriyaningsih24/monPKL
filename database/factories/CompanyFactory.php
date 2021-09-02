@@ -22,10 +22,12 @@ class CompanyFactory extends Factory
     public function definition()
     {
         return [
-            'nama' => $this->faker->word(),
-            'kontak' => $this->faker->companyEmail(),
-            'pimpinan' => $this->faker->name(),
-            'alamat' => $this->faker->address()
+            'namaPerusahaan' => $this->faker->word(),
+            'jenisUsaha' => $this->faker->word(),
+            'namaPimpinan' => $this->faker->name(),
+            'namaHrd' => $this->faker->name(),
+            'alamat' => $this->faker->address(),
+            'noHpPerusahaan' => $this->faker->e164PhoneNumber()
         ];
     }
 }

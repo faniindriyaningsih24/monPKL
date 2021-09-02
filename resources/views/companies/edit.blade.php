@@ -20,7 +20,8 @@
                     </ul>
                 </div>
             @endif
-
+            <a href="{{ route('companies.index') }}" class="btn btn-sm p-2 btn-warning mb-3"><i class="fas fa-chevron-circle-left"></i></a>
+            
             {{-- <div class="row">
                 <div class="col-8">
                     <form action="{{ route('companies.update',$company->idPerusahaan) }}" method="POST">
@@ -59,7 +60,7 @@
 
             <div class="row">
                 <div class="col-12 col-md-12 col-lg-12">
-                    <form action="{{ route('companies.update',$company->idPerusahaan) }}" method="POST">
+                    <form action="{{ route('companies.update',$company->id) }}" method="POST">
                         @csrf
                         @method('PUT')
                         <div class="card">

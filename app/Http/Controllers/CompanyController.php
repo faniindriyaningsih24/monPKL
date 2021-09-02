@@ -14,12 +14,12 @@ class CompanyController extends Controller
      */
     public function index()
     {
-        //mengambil data terakhir dan pagination 5 list
-        $companies = Company::latest()->paginate(10);
+        //mengambil data terakhir dan pagination 10 list
+        $companies = Company::latest()->paginate(5);
 
         // Mengirim variabel $company ke halaman view company
         //include dengam number index
-        return view('companies.index', compact('companies'))->with('i', (request()->input('page', 1) - 1) * 10);
+        return view('companies.index', compact('companies'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     /**

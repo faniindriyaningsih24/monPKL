@@ -29,9 +29,10 @@
                 <th>No HP / Tlp</th>
                 <th width="120px" class="text-center">Action</th>
             </tr>
+            <?php $i=1; ?>
             @foreach ($companies as $c)
             <tr>
-                <td class="text-center">{{ ++$i }}</td>
+                <td class="text-center">{{ $i++ }}</td>
                 <td>{{ $c->namaPerusahaan}}</td>
                 <td>{{ $c->jenisUsaha}}</td>
                 <td>{{ $c->namaPimpinan}}</td>
@@ -39,9 +40,9 @@
                 <td>{{ $c->alamat}}</td>
                 <td>{{ $c->noHpPerusahaan}}</td>
                 <td class="text-center">
-                    <form action="{{ route('companies.destroy', $c->idPerusahaan) }}" method="POST">
+                    <form action="{{ route('companies.destroy', $c->id) }}" method="POST">
 
-                        <a class="btn btn-primary btn-sm fas fa-edit mr-1" href="{{ route('companies.edit', $c->idPerusahaan) }}"></a>
+                        <a class="btn btn-primary btn-sm fas fa-edit mr-1" href="{{ route('companies.edit', $c->id) }}"></a>
 
                         @csrf
                         @method('DELETE')
@@ -51,7 +52,7 @@
             </tr>
             @endforeach
         </table>
+        {{$companies->links("pagination::bootstrap-4")}}
     </div>
 </div>
-
 @endsection
