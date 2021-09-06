@@ -1,11 +1,12 @@
 <?php
 
+use Illuminate\Routing\RouteGroup;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\PagesController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PagesController;
 use App\Http\Controllers\CompanyController;
-use Illuminate\Routing\RouteGroup;
+use App\Http\Controllers\StudentsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,7 +33,16 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('home', [PagesController::class, 'home'])->name('home');
     Route::get('logout', [AuthController::class, 'logout'])->name('logout');
     
+    //routing perusahaan
     Route::resource('companies', CompanyController::class);
+
+    //routing students
+    Route::get('students', [StudentsController::class, 'index'])->name('students');
+    Route::get('students/create', [StudentsController::class, 'create']);
+    Route::post('students/create', [StudentsController::class, 'store'])->name('students.store');
+    Route::get('students-edit/{id}', [StudentsController::class, 'edit']);
+    Route::post('update-student/{id}', [StudentsController::class, 'update'])->name('students.update');
+    Route::get('delete-student/{id}', [StudentsController::class, 'destroy']);
 });
 
 //HAK AKSES ADMIN

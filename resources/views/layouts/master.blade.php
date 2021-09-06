@@ -82,6 +82,7 @@
             <!-- Start setting navigation  -->
             @if (auth()->user()->idLevel == 1)
               <li><a class="nav-link" href="/companies"><i class="fas fa-pencil-ruler"></i> <span>Perusahaan</span></a></li>
+              <li><a class="nav-link" href="/students"><i class="fas fa-pencil-ruler"></i> <span>Siswa</span></a></li>
             @elseif(auth()->user()->idLevel == 2)
               <li class="dropdown">
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i> <span>Tearcher</span></a>
@@ -117,5 +118,18 @@
   <!-- Template JS File -->
   <script src="{{ asset('assets/js/scripts.js') }}"></script>
   <script src="{{ asset('assets/js/custom.js') }}"></script>
+  <script>
+
+  var loadFile = function(event) {
+    var image = document.getElementById('previewImgPas');
+    image.src = URL.createObjectURL(event.target.files[0]);
+  };
+
+  var loadFile2 = function(event) {
+    var image = document.getElementById('previewImgParaf');
+    image.src = URL.createObjectURL(event.target.files[0]);
+  };
+
+  </script>
 </body>
 </html>

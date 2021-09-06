@@ -14,23 +14,24 @@ class CreateStudentsTable extends Migration
     public function up()
     {
         Schema::create('students', function (Blueprint $table) {
-            $table->bigInteger('nis',$autoIncrement = false);
+            $table->id();
+            $table->string('nis');
             $table->string('namaSiswa');
             $table->string('kompetensiKeahlian');
             $table->string('kelas');
             $table->string('tempatLahir');
             $table->date('tanggalLahir');    
             $table->string('jenisKelamin');
-            $table->char('golDarah', 1);
+            $table->char('golDarah', 2);
             $table->string('tahunPelajaran');
-            $table->string('noHP', 13);
+            $table->string('noHP');
             $table->string('email');
             $table->text('alamat');
             $table->string('namaOrtu');
             $table->text('alamatOrtu');
-            $table->string('noHpOrtu', 13);
-            $table->text('photoSiswa');
-            $table->text('parafSiswa');
+            $table->string('noHpOrtu');
+            $table->string('photoSiswa');
+            $table->string('parafSiswa');
             $table->timestamps();
         });
     }
