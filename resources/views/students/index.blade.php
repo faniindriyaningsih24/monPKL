@@ -35,14 +35,16 @@
                 <td>{{ $s->namaSiswa}}</td>
                 <td>{{ $s->kompetensiKeahlian}}</td>
                 <td>{{ $s->kelas}}</td>
-                <td><img src="{{ asset("images") }}/{{ $s->photoSiswa }}" class="py-2" alt="Foto Siswa" width="120px" height="100px"></td>
-                <td><img src="{{ asset("images") }}/{{ $s->parafSiswa }}" class="py-2" alt="Paraf Siswa" width="120px" height="80px"></td>
-                <td>
-                    <a class="btn btn-info btn-sm fas fa-info" href=""></a>
-    
-                    <a class="btn btn-primary btn-sm fas fa-edit" href="students-edit/{{ $s->id }}"></a>
+                <td><img src="{{ asset("images") }}/{{ $s->photoSiswa }}" class="py-2" alt="Foto Siswa" width="150px" height="130px"></td>
+                <td><img src="{{ asset("images") }}/{{ $s->parafSiswa }}" class="py-2" alt="Paraf Siswa" width="150px" height="130px"></td>
+                <td style="width: 13%">
+                    <div class="d-flex justify-content-around">
+                        <a class="btn btn-info btn-sm fas fa-info" href="show-student/{{ $s->id }}"></a>
         
-                    <a href="delete-student/{{ $s->id }}" class="btn btn-danger btn-sm fas fa-trash-alt" onclick="confirm('Apakah Anda Ingin Menghapus Data Ini')"></a>
+                        <a class="btn btn-primary btn-sm fas fa-edit" href="students-edit/{{ $s->id }}"></a>
+            
+                        <a href="delete-student/{{ $s->id }}" class="btn btn-danger btn-sm fas fa-trash-alt" onclick="confirm('Apakah Anda Ingin Menghapus Data Ini')"></a>
+                    </div>
                 </td>
             </tr>
             @endforeach

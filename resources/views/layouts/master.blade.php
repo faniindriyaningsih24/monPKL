@@ -76,13 +76,13 @@
           </div>
           <ul class="sidebar-menu">
             <li class="menu-header">Dashboard</li>
-            <li><a class="nav-link" href="{{ route('home') }}"><i class="fas fa-pencil-ruler"></i> <span>Dashboard</span></a></li>
+            <li><a class="nav-link" href="{{ route('home') }}"><i class="fas fa-columns"></i> <span>Dashboard</span></a></li>
             <li class="menu-header">Pages</li>
            
             <!-- Start setting navigation  -->
             @if (auth()->user()->idLevel == 1)
-              <li><a class="nav-link" href="/companies"><i class="fas fa-pencil-ruler"></i> <span>Perusahaan</span></a></li>
-              <li><a class="nav-link" href="/students"><i class="fas fa-pencil-ruler"></i> <span>Siswa</span></a></li>
+              <li><a class="nav-link" href="/companies"><i class="fas fa-building"></i> <span>Perusahaan</span></a></li>
+              <li><a class="nav-link" href="/students"><i class="fas fa-user-graduate"></i> <span>Siswa</span></a></li>
             @elseif(auth()->user()->idLevel == 2)
               <li class="dropdown">
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i> <span>Tearcher</span></a>
@@ -100,6 +100,14 @@
       <!-- Main Content -->
       @yield('container')
     </div>
+    <footer class="main-footer">
+      <div class="footer-left">
+        Copyright &copy; 2018 <div class="bullet"></div> Design By <a href="https://nauval.in/">Muhamad Nauval Azhar</a>
+      </div>
+      <div class="footer-right">
+        
+      </div>
+    </footer>
   </div>
 
   <!-- General JS Scripts -->

@@ -43,6 +43,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('students-edit/{id}', [StudentsController::class, 'edit']);
     Route::post('update-student/{id}', [StudentsController::class, 'update'])->name('students.update');
     Route::get('delete-student/{id}', [StudentsController::class, 'destroy']);
+    Route::get('show-student/{id}', [StudentsController::class, 'show']);
 });
 
 //HAK AKSES ADMIN
