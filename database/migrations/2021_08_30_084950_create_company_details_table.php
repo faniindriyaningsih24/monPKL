@@ -14,10 +14,10 @@ class CreateCompanyDetailsTable extends Migration
     public function up()
     {
         Schema::create('company_details', function (Blueprint $table) {
-            $table->bigInteger('idCompanyDetails','primary_key');
-            $table->bigInteger('idCompany');
-            $table->bigInteger('nip');
-            $table->string('idMentors');
+            $table->id();
+            $table->foreignId('idCompany');
+            $table->foreignId('nip');
+            $table->foreignId('idMentors');
             $table->timestamps();
         });
     }
