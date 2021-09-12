@@ -36,7 +36,11 @@ class CompanyDetailController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate( [
+            'idCompany' => 'required',
+            'id_teacher' => 'required',
+            'idMentors' => 'required'
+        ] );
     }
 
     /**
