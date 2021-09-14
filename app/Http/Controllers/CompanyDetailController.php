@@ -41,6 +41,9 @@ class CompanyDetailController extends Controller
             'id_teacher' => 'required',
             'idMentors' => 'required'
         ] );
+
+        CompanyDetail::create($request->all());
+        return redirect()->route('company_detail.index')->with('success', 'Berhasil menambah perusahaan');
     }
 
     /**

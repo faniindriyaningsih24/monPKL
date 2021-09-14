@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\MentorController;
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\StudentsController;
 
@@ -44,6 +45,13 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('update-student/{id}', [StudentsController::class, 'update'])->name('students.update');
     Route::get('delete-student/{id}', [StudentsController::class, 'destroy']);
     Route::get('show-student/{id}', [StudentsController::class, 'show']);
+
+    //routing mentor
+    Route::get('mentors', [MentorController::class, 'index'])->name('mentors');
+    Route::get('mentors/create', [MentorController::class, 'create']);
+    Route::post('mentors/create', [MentorController::class, 'store'])->name('mentors.store');
+    Route::get('delete-mentor/{id}', [MentorController::class, 'destroy']);
+
 });
 
 //HAK AKSES ADMIN
