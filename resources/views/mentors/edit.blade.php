@@ -25,21 +25,21 @@
 
             <div class="row">
                 <div class="col-12 col-md-12 col-lg-12">
-                    <form action="{{ route('mentors.store') }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('mentors.update', $mentor->id) }}" method="POST" enctype="multipart/form-data">
                     @csrf
                         <div class="card">
                                 <div class="card-body">
                                     <div class="form-group">
                                         <label>Nama</label>
-                                        <input type="text" class="form-control" placeholder="Nama Mentor" name="namaMentors">
+                                        <input type="text" class="form-control" value="{{ $mentor->namaMentors }}" name="namaMentors">
                                     </div>
                                     <div class="form-group">
                                         <label>Email</label>
-                                        <input type="text" class="form-control" placeholder="Email Mentor" name="email">
+                                        <input type="text" class="form-control" value="{{ $mentor->email }}" name="email">
                                     </div>
                                     <div class="form-group mb-5">
                                         <label>No HP</label>
-                                        <input type="text" class="form-control" placeholder="No.HP Mentor" name="noHpMentors">
+                                        <input type="text" class="form-control" value="{{ $mentor->noHpMentors }}" name="noHpMentors">
                                     </div>
                                     <div class="input-group mb-3">
                                         <div class="input-group-prepend">
@@ -50,7 +50,7 @@
                                             <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
                                         </div>
                                     </div>
-                                    <img id="previewImgPas" width="150px" height="150px" class="mb-4">
+                                <img id="previewImgPas" width="150px" height="150px" class="mb-4" src="{{ asset('images') }}/{{ $mentor->photoMentors }}">
                                     
                                     <div class="input-group mb-3">
                                         <div class="input-group-prepend">
@@ -61,10 +61,10 @@
                                             <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
                                         </div>
                                     </div>
-                                    <img id="previewImgParaf" width="150px" height="150px" class="mb-4">
+                                    <img id="previewImgParaf" width="150px" height="150px" class="mb-4" src="{{ asset('images') }}/{{ $mentor->parafMentors }}">
 
                                     <div class="input-group mb-4 mt-2">
-                                        <input type="submit" value="Tambah" class="btn btn-success mr-2">
+                                        <input type="submit" value="Ubah" class="btn btn-success mr-2">
                                         <input type="reset" value="Batal" class="btn btn-danger ml-2">
                                     </div>
                                 </div>

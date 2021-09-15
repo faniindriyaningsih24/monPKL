@@ -56,4 +56,49 @@ class MentorController extends Controller
         $mentor->delete();        
         return redirect()->route('mentors')->with('success', 'Berhasil Menghapus Data Mentor');
     }
+
+    public function edit($id)
+    {
+        $mentor = Mentors::find($id);
+        return view('mentors.edit', compact('mentor'));
+    }
+
+    public function update( Request $request )
+    {
+        $request->validate( [
+            'namaMentors' => 'required',
+            'email' => 'required|email',
+            'noHpMentors' => 'required',
+            'photoMentors' => 'image|mimes:jpeg,jpg,png',
+            'parafMentors' => 'image|mimes:jpeg,jpg,png'
+        ] );
+
+        $mentor = Mentors::find($request->id);
+
+        if( $request->hasFile('photoMentors') )
+        {
+            unlink(public_path('images').'/'.$mentor->photoMentors);
+            $fotomentor = $request->file('photoMentors');
+            $fotomentorName = mt_rand(1000000, 9999999) . '.' . $fotomentor->extension();
+            $fotomentor->move(public_path('images'), $fotomentorName);
+            $mentor->photoMentors = $fotomentorName;
+        }
+
+        if( $request->hasFile('parafMentors') )
+        {
+            unlink(public_path('images').'/'.$mentor->parafMentors);
+            $parafmentor = $request->file('parafMentors');
+            $parafmentorName = mt_rand(1000000, 9999999) . '.' . $parafmentor->extension();
+            $parafmentor->move(public_path('images'), $parafmentorName);
+            $mentor->parafMentors = $parafmentorName;
+        }
+
+        $mentor->namaMentors = $request->namaMentors;
+        $mentor->email = $request->email;
+        $mentor->noHpMentors = $request->noHpMentors;
+
+        $mentor->save();
+
+        return redirect()->route('mentors')->with('success', 'Berhasi Mengubah Data Mentor');
+    }
 }

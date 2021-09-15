@@ -51,6 +51,9 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('mentors/create', [MentorController::class, 'create']);
     Route::post('mentors/create', [MentorController::class, 'store'])->name('mentors.store');
     Route::get('delete-mentor/{id}', [MentorController::class, 'destroy']);
+    Route::get('mentor-edit/{id}', [MentorController::class, 'edit']);
+    Route::post('update-mentor/{id}', [MentorController::class, 'update'])->name('mentors.update');
+
 
 });
 

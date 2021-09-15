@@ -39,9 +39,9 @@
                 <td><img src="{{ asset("images") }}/{{ $s->parafMentors }}" class="py-2" alt="Paraf Siswa" width="150px" height="130px"></td>
                 <td style="width: 13%">
                     <div class="d-flex justify-content-around">
-                        <a class="btn btn-primary btn-sm fas fa-edit" href="mentor-edit/{{ $s->id }}"></a>
+                        <a class="btn btn-primary btn-sm fas fa-edit mr-1" href="mentor-edit/{{ $s->id }}"></a>
             
-                        <a onclick="confirm('Apakah Anda Ingin Menghapus Data Ini')" href="delete-mentor/{{ $s->id }}" class="btn btn-danger btn-sm fas fa-trash-alt" onclick="confirm('Apakah Anda Ingin Menghapus Data Ini')"></a>
+                        <a onclick="confirm('Apakah Anda Ingin Menghapus Data Ini')" href="delete-mentor/{{ $s->id }}" class="btn btn-danger btn-sm fas fa-trash-alt ml-1" onclick="confirm('Apakah Anda Ingin Menghapus Data Ini')"></a>
                     </div>
                 </td>
             </tr>
