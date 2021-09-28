@@ -15,6 +15,7 @@ class CreateCompanyDetailsTable extends Migration
     {
         Schema::create('company_details', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('idStudent');
             $table->foreignId('idCompany');
             $table->foreignId('id_teacher');
             $table->foreignId('idMentors');

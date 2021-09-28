@@ -8,6 +8,7 @@ use App\Http\Controllers\PagesController;
 use App\Http\Controllers\MentorController;
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\StudentsController;
+use App\Http\Controllers\TeacherController;
 
 /*
 |--------------------------------------------------------------------------
@@ -54,6 +55,13 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('mentor-edit/{id}', [MentorController::class, 'edit']);
     Route::post('update-mentor/{id}', [MentorController::class, 'update'])->name('mentors.update');
 
+    //routing teacher
+    Route::get('teachers', [TeacherController::class, 'index'])->name('teachers');
+    Route::get('teachers/create', [TeacherController::class, 'create']);
+    Route::post('teachers/create', [TeacherController::class, 'store'])->name('teachers.store');
+    Route::get('delete-teacher/{id}', [TeacherController::class, 'destroy']);
+    Route::get('teacher-edit/{id}', [TeacherController::class, 'edit']);
+    Route::post('update-teacher/{id}', [TeacherController::class, 'update'])->name('teachers.update');
 
 });
 
