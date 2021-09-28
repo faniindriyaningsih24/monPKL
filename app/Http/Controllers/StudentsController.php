@@ -38,7 +38,7 @@ class StudentsController extends Controller
     public function store(Request $request)
     {
         $request->validate( [
-            'nis' => 'required',
+            'nis' => 'required|unique:students,nis',
             'namaSiswa' => 'required',
             'kompetensiKeahlian' => 'required',
             'kelas' => 'required',
@@ -123,7 +123,7 @@ class StudentsController extends Controller
     public function update(Request $request)
     {
         $request->validate( [
-            'nis' => 'required',
+            'nis' => 'required|unique:students,nis',
             'namaSiswa' => 'required',
             'kompetensiKeahlian' => 'required',
             'kelas' => 'required',

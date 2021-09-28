@@ -21,7 +21,7 @@ class TeacherController extends Controller
     public function store(Request $request)
     {
         $request->validate( [
-            'nuptk' => 'required',
+            'nuptk' => 'required|unique:teachers,nuptk',
             'namaGuru' => 'required',
             'email' => 'required|email',
             'noHpGuru' => 'required',
@@ -68,7 +68,7 @@ class TeacherController extends Controller
     public function update(Request $request)
     {
         $request->validate( [
-            'nuptk' => 'required',
+            'nuptk' => 'required|unique:teachers,nuptk',
             'namaGuru' => 'required',
             'email' => 'required|email',
             'noHpGuru' => 'required',
