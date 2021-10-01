@@ -53,6 +53,14 @@
                                             <option value="TFLM" {{ ( $student->kompetensiKeahlian == "TFLM" ) ? "selected" : "" }}>TFLM</option>
                                         </select>
                                     </div>
+                                    <div class="input-group mb-4">
+                                        <label class="input-group-text">Tanggal Mulai PKL</label>
+                                        <input type="date" class="form-control" placeholder="Mulai PKL" name="tglMulaiPKL" value="{{ $student->tglMulaiPKL }}">
+                                    </div>
+                                    <div class="input-group mb-4">
+                                        <label class="input-group-text">Tanggal Selesai PKL</label>
+                                        <input type="date" class="form-control" placeholder="Selesai PKL" name="tglSelesaiPKL" value="{{ $student->tglSelesaiPKL }}">
+                                    </div>
                                     <div class="input-group mb-3">
                                         <label class="input-group-text" for="inputGroupSelect01">Kelas...</label>
                                         <select name="kelas" class="custom-select" id="inputGroupSelect01">

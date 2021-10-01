@@ -85,6 +85,7 @@
               <li><a class="nav-link" href="/students"><i class="fas fa-user-graduate"></i> <span>Siswa</span></a></li>
               <li><a class="nav-link" href="/mentors"><i class="fas fa-people-carry"></i> <span>Mentor</span></a></li>
               <li><a class="nav-link" href="/teachers"><i class="fas fa-chalkboard-teacher"></i> <span>Guru</span></a></li>
+              <li><a class="nav-link" href="/company-detail"><i class="fas fa-city"></i> <span>Detail Perusahaan</span></a></li>
             @elseif(auth()->user()->idLevel == 2)
               <li class="dropdown">
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i> <span>Tearcher</span></a>

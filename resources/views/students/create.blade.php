@@ -63,6 +63,14 @@
                                         </select>
                                     </div>
                                     <div class="input-group mb-4">
+                                        <label class="input-group-text">Tanggal Mulai PKL</label>
+                                        <input type="date" class="form-control" placeholder="Mulai PKL" name="tglMulaiPKL">
+                                    </div>
+                                    <div class="input-group mb-4">
+                                        <label class="input-group-text">Tanggal Selesai PKL</label>
+                                        <input type="date" class="form-control" placeholder="Selesai PKL" name="tglSelesaiPKL">
+                                    </div>
+                                    <div class="input-group mb-4">
                                         <label class="input-group-text">Tempat Lahir</label>
                                         <input type="text" class="form-control" placeholder="Tempat Lahir" name="tempatLahir">
                                     </div>

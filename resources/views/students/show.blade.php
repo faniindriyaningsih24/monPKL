@@ -81,6 +81,14 @@
                                 <label>Tahun Ajaran</label>
                                 <input type="text" class="form-control" disabled value="{{ $student->tahunPelajaran }}">
                             </div>
+                            <div class="form-group col-md-6 col-12">
+                                <label>Mulai PKL</label>
+                                <input type="text" class="form-control" disabled value="{{ $student->tglMulaiPKL }}">
+                            </div>
+                            <div class="form-group col-md-6 col-12">
+                                <label>Selesai PKL</label>
+                                <input type="text" class="form-control" disabled value="{{ $student->tglSelesaiPKL }}">
+                            </div> 
                         </div>
                         <div class="row">
                             <div class="form-group col-md-6 col-12">
@@ -98,7 +106,7 @@
                             <div class="form-group col-md-6 col-12">
                                 <label>Alamat Orangtua</label>
                                 <textarea class="form-control" disabled aria-label="With textarea">{{ $student->alamatOrtu }}</textarea>
-                            </div>          
+                            </div>         
                         </div>
                     </div>
                     <div class="card-footer text-right">

@@ -68,7 +68,7 @@ class TeacherController extends Controller
     public function update(Request $request)
     {
         $request->validate( [
-            'nuptk' => 'required|unique:teachers,nuptk',
+            'nuptk' => 'required',
             'namaGuru' => 'required',
             'email' => 'required|email',
             'noHpGuru' => 'required',
