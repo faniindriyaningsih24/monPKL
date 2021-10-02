@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\DetailCompany;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Teachers extends Model
 {
@@ -17,4 +18,9 @@ class Teachers extends Model
         "photoGuru",
         "parafGuru"
     ];
+
+    public function guruPKL()
+    {
+        return $this->hasOne(DetailCompany::class);
+    }
 }

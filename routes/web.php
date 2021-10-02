@@ -7,8 +7,9 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\MentorController;
 use App\Http\Controllers\CompanyController;
-use App\Http\Controllers\StudentsController;
 use App\Http\Controllers\TeacherController;
+use App\Http\Controllers\StudentsController;
+use App\Http\Controllers\DetailCompanyController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,6 +38,9 @@ Route::group(['middleware' => 'auth'], function () {
     
     //routing perusahaan
     Route::resource('companies', CompanyController::class);
+
+    // routing detail perusahaan
+    Route::resource('company-detail', DetailCompanyController::class);
 
     //routing students
     Route::get('students', [StudentsController::class, 'index'])->name('students');

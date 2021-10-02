@@ -90,7 +90,7 @@
                                         <input type="text" class="form-control" placeholder="No Hp / Tlp" name="noHpPerusahaan" value="{{ $company->noHpPerusahaan }}">
                                     </div>
                                     <div class="form-group">
-                                        <button type="submit" class="btn btn-primary">Update</button>
+                                        <button type="submit" class="btn btn-success">Ubah</button>
                                         <input type="reset" value="Batal" class="btn btn-danger ml-2">
                                     </div>
                                 </div>

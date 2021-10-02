@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\DetailCompany;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Mentors extends Model
 {
@@ -16,4 +17,9 @@ class Mentors extends Model
         "photoMentors",
         "parafMentors"
     ];
+
+    public function mentorPKL()
+    {
+        return $this->hasOne(DetailCompany::class);
+    }
 }
