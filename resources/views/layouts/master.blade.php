@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="{{ asset('assets/modules/bootstrap/css/bootstrap.min.css') }}">
   {{-- <link rel="stylesheet" href="assets/modules/fontawesome/css/all.min.css"> --}}
   <link rel="stylesheet" href="{{ asset('assets/modules/fontawesome/css/all.min.css') }}">
-  <link rel="icon" href="assets/img/monpkl.jpeg" type="image/x-icon">>
+  <link rel="icon" src="{{ url('assets/img/monpkl.jpeg') }}" type="image/jpeg">
   <!-- CSS Libraries -->
 
   <!-- Template CSS -->
@@ -45,7 +45,7 @@
             <div class="d-sm-none d-lg-inline-block">Hi, {{ Auth::user()->name }}</div></a>
             <div class="dropdown-menu dropdown-menu-right">
               <div class="dropdown-title"></div>
-              <a href="features-profile.html" class="dropdown-item has-icon">
+              <a href="#" class="dropdown-item has-icon">
                 <i class="far fa-user"></i> Profile - 
 
                 <!-- Start Setting Level Name  -->
@@ -68,7 +68,10 @@
       <div class="main-sidebar sidebar-style-2">
         <aside id="sidebar-wrapper">
           <div class="sidebar-brand">
-            <a href="{{ route('home') }}">monPKL</a>
+            <a href="{{ route('home') }}">
+            <img src="{{ url('assets/img/monpkl.jpeg') }}" alt="logo" class="rounded-circle" width="70px">
+            monPKL
+            </a>
           </div>
           <!-- Menu  -->
           <div class="sidebar-brand sidebar-brand-sm">
@@ -78,7 +81,7 @@
             <li class="menu-header">Dashboard</li>
             <li><a class="nav-link" href="{{ route('home') }}"><i class="fas fa-columns"></i> <span>Dashboard</span></a></li>
             <li class="menu-header">Pages</li>
-           
+        
             <!-- Start setting navigation  -->
             @if (auth()->user()->idLevel == 1)
               <li><a class="nav-link" href="/companies"><i class="fas fa-building"></i> <span>Perusahaan</span></a></li>
