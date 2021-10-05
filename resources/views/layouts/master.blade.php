@@ -53,6 +53,10 @@
                     Admin
                 @elseif (auth()->user()->idLevel == 2)
                   Guru
+                @elseif (auth()->user()->idLevel == 3)
+                  Mentor
+                @elseif (auth()->user()->idLevel == 4)
+                  Siswa
                 @endif
                 <!-- End Setting Level Name  -->
 
@@ -89,13 +93,17 @@
               <li><a class="nav-link" href="/mentors"><i class="fas fa-people-carry"></i> <span>Mentor</span></a></li>
               <li><a class="nav-link" href="/teachers"><i class="fas fa-chalkboard-teacher"></i> <span>Guru</span></a></li>
               <li><a class="nav-link" href="/company-detail"><i class="fas fa-city"></i> <span>Detail Perusahaan</span></a></li>
-            @elseif(auth()->user()->idLevel == 2)
-              <li class="dropdown">
-                <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i> <span>Tearcher</span></a>
-                <ul class="dropdown-menu">
-                  <li><a class="nav-link" href="/companies">Tambah Perusahaan</a></li>
-                </ul>
-              </li>
+              <li><a class="nav-link" href=""><i class="fas fa-building"></i> <span>Info PKL</span></a></li>
+              @elseif(auth()->user()->idLevel == 2)
+              <li><a class="nav-link" href=""><i class="fas fa-building"></i> <span>Info PKL</span></a></li>
+            @elseif(auth()->user()->idLevel == 3)
+              <li><a class="nav-link" href=""><i class="fas fa-building"></i> <span>Info PKL</span></a></li>
+              <li><a class="nav-link" href=""><i class="fas fa-building"></i> <span>Acc Presensi</span></a></li>
+              <li><a class="nav-link" href=""><i class="fas fa-building"></i> <span>Acc Jurnal</span></a></li>
+            @elseif(auth()->user()->idLevel == 4) 
+              <li><a class="nav-link" href=""><i class="fas fa-building"></i> <span>Info PKL</span></a></li>
+              <li><a class="nav-link" href=""><i class="fas fa-building"></i> <span>Presensi</span></a></li>
+              <li><a class="nav-link" href=""><i class="fas fa-building"></i> <span>Jurnal</span></a></li>
             @endif
             <!-- End setting navigation  -->
             
