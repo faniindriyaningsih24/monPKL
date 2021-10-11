@@ -10,6 +10,8 @@ use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\StudentsController;
 use App\Http\Controllers\DetailCompanyController;
+use App\Http\Controllers\JournalController;
+use App\Http\Controllers\PresensiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -66,6 +68,22 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('delete-teacher/{id}', [TeacherController::class, 'destroy']);
     Route::get('teacher-edit/{id}', [TeacherController::class, 'edit']);
     Route::post('update-teacher/{id}', [TeacherController::class, 'update'])->name('teachers.update');
+
+    //routing journal
+    Route::get('journal', [JournalController::class, 'index'])->name('journal');
+    Route::get('journal/create', [JournalController::class, 'create']);
+    Route::post('journal/create', [JournalController::class, 'store'])->name('journal.store');
+    Route::get('journal-edit/{id}', [JournalController::class, 'edit']);
+    Route::post('update-journal/{id}', [JournalController::class, 'update'])->name('journal.update');
+    Route::get('delete-journal/{id}', [JournalController::class, 'destroy']);
+
+    //routing presensi
+    Route::get('presensi', [PresensiController::class, 'index'])->name('presensi');
+    Route::get('presensi/create', [PresensiController::class, 'create']);
+    Route::post('presensi/create', [PresensiController::class, 'store'])->name('presensi.store');
+    Route::get('presensi-edit/{id}', [PresensiController::class, 'edit']);
+    Route::post('update-presensi/{id}', [PresensiController::class, 'update'])->name('presensi.update');
+
 
 });
 

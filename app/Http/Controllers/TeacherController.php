@@ -23,8 +23,8 @@ class TeacherController extends Controller
         $request->validate( [
             'nuptk' => 'required|unique:teachers,nuptk',
             'namaGuru' => 'required',
-            'email' => 'required|email',
-            'noHpGuru' => 'required',
+            // 'email' => 'required|email',
+            // 'noHpGuru' => 'required'
             'photoGuru' => 'required|image|mimes:jpeg,jpg,png',
             'parafGuru' => 'required|image|mimes:jpeg,jpg,png'
         ] );

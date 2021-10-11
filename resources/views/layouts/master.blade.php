@@ -49,13 +49,13 @@
                 <i class="far fa-user"></i> Profile - 
 
                 <!-- Start Setting Level Name  -->
-                @if (auth()->user()->idLevel == 1)
+                @if (auth()->user()->level == "admin")
                     Admin
-                @elseif (auth()->user()->idLevel == 2)
+                @elseif (auth()->user()->level == "guru")
                   Guru
-                @elseif (auth()->user()->idLevel == 3)
+                @elseif (auth()->user()->level == "mentor")
                   Mentor
-                @elseif (auth()->user()->idLevel == 4)
+                @elseif (auth()->user()->level == "siswa")
                   Siswa
                 @endif
                 <!-- End Setting Level Name  -->
@@ -87,23 +87,23 @@
             <li class="menu-header">Pages</li>
         
             <!-- Start setting navigation  -->
-            @if (auth()->user()->idLevel == 1)
+            @if (auth()->user()->level == "admin")
               <li><a class="nav-link" href="/companies"><i class="fas fa-building"></i> <span>Perusahaan</span></a></li>
               <li><a class="nav-link" href="/students"><i class="fas fa-user-graduate"></i> <span>Siswa</span></a></li>
               <li><a class="nav-link" href="/mentors"><i class="fas fa-people-carry"></i> <span>Mentor</span></a></li>
               <li><a class="nav-link" href="/teachers"><i class="fas fa-chalkboard-teacher"></i> <span>Guru</span></a></li>
               <li><a class="nav-link" href="/company-detail"><i class="fas fa-city"></i> <span>Detail Perusahaan</span></a></li>
               <li><a class="nav-link" href=""><i class="fas fa-building"></i> <span>Info PKL</span></a></li>
-              @elseif(auth()->user()->idLevel == 2)
+              @elseif(auth()->user()->level == "guru")
               <li><a class="nav-link" href=""><i class="fas fa-building"></i> <span>Info PKL</span></a></li>
-            @elseif(auth()->user()->idLevel == 3)
+            @elseif(auth()->user()->level == "mentor")
               <li><a class="nav-link" href=""><i class="fas fa-building"></i> <span>Info PKL</span></a></li>
-              <li><a class="nav-link" href=""><i class="fas fa-building"></i> <span>Acc Presensi</span></a></li>
-              <li><a class="nav-link" href=""><i class="fas fa-building"></i> <span>Acc Jurnal</span></a></li>
-            @elseif(auth()->user()->idLevel == 4) 
+              <li><a class="nav-link" href="/presensi"><i class="fas fa-building"></i> <span>Acc Presensi</span></a></li>
+              <li><a class="nav-link" href="/journal"><i class="fas fa-building"></i> <span>Acc Jurnal</span></a></li>
+            @elseif(auth()->user()->level == "siswa") 
               <li><a class="nav-link" href=""><i class="fas fa-building"></i> <span>Info PKL</span></a></li>
-              <li><a class="nav-link" href=""><i class="fas fa-building"></i> <span>Presensi</span></a></li>
-              <li><a class="nav-link" href=""><i class="fas fa-building"></i> <span>Jurnal</span></a></li>
+              <li><a class="nav-link" href="/presensi"><i class="fas fa-building"></i> <span>Presensi</span></a></li>
+              <li><a class="nav-link" href="/journal"><i class="fas fa-building"></i> <span>Jurnal</span></a></li>
             @endif
             <!-- End setting navigation  -->
             

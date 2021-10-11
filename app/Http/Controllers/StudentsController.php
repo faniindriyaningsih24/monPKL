@@ -41,8 +41,6 @@ class StudentsController extends Controller
             'nis' => 'required|unique:students,nis',
             'namaSiswa' => 'required',
             'kompetensiKeahlian' => 'required',
-            'tglMulaiPKL' => 'required',
-            'tglSelesaiPKL' => 'required',
             'kelas' => 'required',
             'tempatLahir' => 'required',
             'tanggalLahir' => 'required',
@@ -71,8 +69,6 @@ class StudentsController extends Controller
         $student->nis = $request->nis;
         $student->namaSiswa = $request->namaSiswa;
         $student->kompetensiKeahlian = $request->kompetensiKeahlian;
-        $student->tglMulaiPKL = $request->tglMulaiPKL;
-        $student->tglSelesaiPKL = $request->tglSelesaiPKL;
         $student->kelas = $request->kelas;
         $student->tempatLahir = $request->tempatLahir;
         $student->tanggalLahir = $request->tanggalLahir;
@@ -130,8 +126,6 @@ class StudentsController extends Controller
             'nis' => 'required',
             'namaSiswa' => 'required',
             'kompetensiKeahlian' => 'required',
-            'tglMulaiPKL' => 'required',
-            'tglSelesaiPKL' => 'required',
             'kelas' => 'required',
             'tempatLahir' => 'required',
             'tanggalLahir' => 'required',
@@ -169,8 +163,6 @@ class StudentsController extends Controller
         $student->nis = $request->nis;
         $student->namaSiswa = $request->namaSiswa;
         $student->kompetensiKeahlian = $request->kompetensiKeahlian;
-        $student->tglMulaiPKL = $request->tglMulaiPKL;
-        $student->tglSelesaiPKL = $request->tglSelesaiPKL;
         $student->kelas = $request->kelas;
         $student->tempatLahir = $request->tempatLahir;
         $student->tanggalLahir = $request->tanggalLahir;

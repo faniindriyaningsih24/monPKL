@@ -22,7 +22,7 @@ class MentorController extends Controller
     {
         $request->validate( [
             'namaMentors' => 'required',
-            'email' => 'required|email',
+            'email' => 'required',
             'noHpMentors' => 'required',
             'photoMentors' => 'required|image|mimes:jpeg,jpg,png',
             'parafMentors' => 'required|image|mimes:jpeg,jpg,png'

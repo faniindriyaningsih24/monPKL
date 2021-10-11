@@ -53,22 +53,13 @@
                                             <option value="TFLM" {{ ( $student->kompetensiKeahlian == "TFLM" ) ? "selected" : "" }}>TFLM</option>
                                         </select>
                                     </div>
-                                    <div class="input-group mb-4">
-                                        <label class="input-group-text">Tanggal Mulai PKL</label>
-                                        <input type="date" class="form-control" placeholder="Mulai PKL" name="tglMulaiPKL" value="{{ $student->tglMulaiPKL }}">
-                                    </div>
-                                    <div class="input-group mb-4">
-                                        <label class="input-group-text">Tanggal Selesai PKL</label>
-                                        <input type="date" class="form-control" placeholder="Selesai PKL" name="tglSelesaiPKL" value="{{ $student->tglSelesaiPKL }}">
-                                    </div>
                                     <div class="input-group mb-3">
                                         <label class="input-group-text" for="inputGroupSelect01">Kelas...</label>
                                         <select name="kelas" class="custom-select" id="inputGroupSelect01">
                                             {{-- <option selected disabled>Kelas</option> --}} {{ ( $student->golDarah == "A" ) ? "selected" : "" }}
-                                            <option value="X" {{ ( $student->kelas == "X" ) ? "selected" : "" }}>X</option>
-                                            <option value="XI" {{ ( $student->kelas == "XI" ) ? "selected" : "" }}>XI</option>
-                                            <option value="XII" {{ ( $student->kelas == "XII" ) ? "selected" : "" }}>XII</option>
-                                            <option value="XIII" {{ ( $student->kelas == "XIII" ) ? "selected" : "" }}>XIII</option>
+                                            <option value="XII - 1" {{ ( $student->kelas == "XII - 1" ) ? "selected" : "" }}>XII - 1</option>
+                                            <option value="XII - 2" {{ ( $student->kelas == "XII - 2" ) ? "selected" : "" }}>XII - 2</option>
+                                            <option value="XII - 3" {{ ( $student->kelas == "XII - 3" ) ? "selected" : "" }}>XII - 3</option>
                                         </select>
                                     </div>
                                     <div class="input-group mb-4">

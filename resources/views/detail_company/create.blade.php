@@ -73,7 +73,14 @@
                                             @endforeach
                                         </select>
                                     </div>
-
+                                    <div class="input-group mb-4">
+                                        <label class="input-group-text">Tanggal Mulai PKL</label>
+                                        <input type="date" class="form-control" placeholder="" name="tglMulaiPKL">
+                                    </div>
+                                    <div class="input-group mb-4">
+                                        <label class="input-group-text">Tanggal Selesai PKL</label>
+                                        <input type="date" class="form-control" placeholder="" name="tglSelesaiPKL">
+                                    </div>
                                     <div class="form-group">
                                         <input type="submit" value="Tambah" class="btn btn-success mr-2">
                                         <input type="reset" value="Batal" class="btn btn-danger ml-2">

@@ -75,6 +75,16 @@
                                     </div>
 
                                     <div class="form-group">
+                                        <label>Tanggal Mulai PKL</label>
+                                        <input type="date" class="form-control" placeholder="" name="tglMulaiPKL" value="{{ $dc->tglMulaiPKL }}">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Tanggal Selesai PKL</label>
+                                        <input type="date" class="form-control" placeholder="" name="tglSelesaiPKL" value="{{ $dc->tglSelesaiPKL }}">
+                                    </div>
+
+                                    <div class="form-group">
                                         <input type="submit" value="Ubah" class="btn btn-success mr-2">
                                         <input type="reset" value="Batal" class="btn btn-danger ml-2">
                                     </div>

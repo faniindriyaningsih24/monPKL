@@ -14,8 +14,8 @@ class CreateJournalTable extends Migration
     public function up()
     {
         Schema::create('journal', function (Blueprint $table) {
-            $table->bigInteger('idJournal','primary_key');
-            $table->integer('idInternStudents');
+            $table->bigInteger('id','primary_key');
+            $table->integer('idCompanyDetail');
             $table->string('bidangPekerjaan');
             $table->text('uraianPekerjaan');
             $table->date('tanggalJurnal');

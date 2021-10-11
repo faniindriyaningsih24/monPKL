@@ -85,7 +85,13 @@
 
                       <div class="form-group">
                         <label for="">Level</label>
-                        <input id="" type="text" class="form-control" name="idLevel" tabindex="4" required autofocus>
+                        <select name="level" class="custom-select" id="inputGroupSelect01" tabindex="4">
+                          <option selected disabled>Level</option>
+                          <option value="admin">admin</option>
+                          <option value="guru">guru</option>
+                          <option value="mentor">mentor</option>
+                          <option value="siswa">siswa</option>
+                        </select>
                         <div class="invalid-feedback">
                           Please fill in your level
                         </div>

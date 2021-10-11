@@ -56,19 +56,10 @@
                                         <label class="input-group-text" for="inputGroupSelect01">Kelas...</label>
                                         <select name="kelas" class="custom-select" id="inputGroupSelect01">
                                             <option selected disabled>Kelas</option>
-                                            <option value="X">X</option>
-                                            <option value="XI">XI</option>
-                                            <option value="XII">XII</option>
-                                            <option value="XIII">XIII</option>
+                                            <option value="XII">XII - 1</option>
+                                            <option value="XII">XII - 2</option>
+                                            <option value="XII">XII - 3</option>
                                         </select>
-                                    </div>
-                                    <div class="input-group mb-4">
-                                        <label class="input-group-text">Tanggal Mulai PKL</label>
-                                        <input type="date" class="form-control" placeholder="Mulai PKL" name="tglMulaiPKL">
-                                    </div>
-                                    <div class="input-group mb-4">
-                                        <label class="input-group-text">Tanggal Selesai PKL</label>
-                                        <input type="date" class="form-control" placeholder="Selesai PKL" name="tglSelesaiPKL">
                                     </div>
                                     <div class="input-group mb-4">
                                         <label class="input-group-text">Tempat Lahir</label>
