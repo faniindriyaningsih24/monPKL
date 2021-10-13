@@ -1,0 +1,17 @@
+.bg-purple {
+    background-color: #B8B5FF;
+    font-family: monospace;
+    font-weight: bold;
+}
+
+.bg-login {
+    background-color: #4B3869;
+    color: white;
+    font-weight: bold;    
+}
+
+.bg-regis {
+    background-color: #63B4B8;
+    color: white;
+    font-weight: bold;
+}
