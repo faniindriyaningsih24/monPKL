@@ -10,6 +10,7 @@
         <link rel="shortcut icon" href="assets/img/monpkl.jpeg" type="image/x-icon">
         <link rel="stylesheet" href="{{ asset('assets/modules/bootstrap/css/bootstrap.min.css') }}">
         <link rel="stylesheet" href="{{ asset('assets/modules/bootstrap/css/akmal.css') }}">
+        <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     </head>
     <body>
         {{-- <div>
@@ -65,6 +66,23 @@
                 </div>
             </div>
         </nav>
+
+        <div class="container mt-2">
+            <div class="row">
+                <div class="col-4 mt-5">
+                    <img src="assets/img/undraw2.png" alt="" class="img-fluid">
+                </div>
+                <div class="col-4 mt-5">
+                    <h1 class="h1hero">
+                        <b>CARA MUDAH <span class="monitoring ml-5">MONITORING</span> <br>
+                        KEGIATAN <br> <span class="monitoring ml-5">PRAKERIN</span> <br> SISWA</b>
+                    </h1>
+                </div>
+                <div class="col-4 mt-5">
+                    <img src="assets/img/undraw.png" alt="" class="img-fluid">
+                </div>
+            </div>
+        </div>
 
 
 
