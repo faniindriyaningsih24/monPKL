@@ -54,7 +54,7 @@
                     </ul>
                     <div class="form-inline my-2 my-lg-0">
                         @auth
-                            <a href="{{ url('/home') }}" class="btn btn-sm btn-info">Home</a>
+                            <a href="{{ url('/home') }}" class="btn btn-sm btn-info font-monospace bg-home">Home</a>
                         @else
                         <a href="{{ route('login') }}" class="bg-login btn btn-sm mr-2 font-monospace">Log in</a>
 
@@ -67,19 +67,34 @@
             </div>
         </nav>
 
+        <div id="particles-js"></div>
         <div class="container mt-2">
             <div class="row">
-                <div class="col-4 mt-5">
-                    <img src="assets/img/undraw2.png" alt="" class="img-fluid">
-                </div>
-                <div class="col-4 mt-5">
+                <div class="col-lg-6 col-sm-12 mt-5">
+                    <div class="alert alert-purple" role="alert">
+                        Monitoring Prakerin Anti Ruwet!
+                    </div>
                     <h1 class="h1hero">
-                        <b>CARA MUDAH <span class="monitoring ml-5">MONITORING</span> <br>
-                        KEGIATAN <br> <span class="monitoring ml-5">PRAKERIN</span> <br> SISWA</b>
+                        <b>CARA MUDAH <span class="monitoring">MONITORING</span> <br>
+                            KEGIATAN <span class="monitoring">PRAKERIN</span> <span class="siswa">SISWA</span></b>
                     </h1>
+                    
+                    <div class="d-flex flex-row justify-content-start mt-5">
+                        <div class="mr-1">
+                            <a href="/login">
+                                <button class="btn btn-lg btn-mulai mr-1">Mulai!</button><i class='bx bx-chevrons-down bx-md bx-fade-down' style="color: #A12568"></i>
+                            </a>
+                        </div>
+
+                        <div class="ml-1">
+                            <a href="#">
+                                <button class="btn btn-lg btn-pelajari mr-2">Pelajari</button><i class='bx bx-search-alt-2 bx-md bx-fade-down' style="color: #00C1D4"></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-4 mt-5">
-                    <img src="assets/img/undraw.png" alt="" class="img-fluid">
+                <div class="col-lg-6 col-sm-12 mt-5">
+                    <img src="assets/img/undraw2.png" alt="" class="img-fluid">
                 </div>
             </div>
         </div>
@@ -105,5 +120,7 @@
         <!-- Template JS File -->
         <script src="{{ asset('assets/js/scripts.js') }}"></script>
         <script src="{{ asset('assets/js/custom.js') }}"></script>
+        <script src="{{ asset('assets/js/app.js') }}"></script>
+        <script src="{{ asset('assets/js/particles.js') }}"></script>
     </body>
 </html>
