@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Teachers;
+use App\Models\User;
+use Hash;
 
 class TeacherController extends Controller
 {
@@ -45,7 +47,17 @@ class TeacherController extends Controller
         $teacher->photoGuru = $fotoguruName;
         $teacher->parafGuru = $parafguruName;
 
-        $teacher->save();
+        if($teacher->save()){
+            $user = new User;
+            $user->name = ucwords(strtolower($request->namaGuru));
+            $user->email = strtolower($request->email);
+            $user->password = Hash::make("guru1234");
+            $user->level = "guru";
+            $user->email_verified_at = \Carbon\Carbon::now();
+            $simpan = $user->save();
+        }
+
+        
 
         return redirect()->route('teachers')->with('success', 'Sukses Menambah Guru');
     }

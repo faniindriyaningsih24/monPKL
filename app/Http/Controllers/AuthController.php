@@ -9,6 +9,9 @@ use Validator;
 use Hash;
 use Session;
 use App\Models\User;
+use App\Models\Students;
+use App\Models\Mentors;
+use App\Models\Teachers;
 
 
 class AuthController extends Controller
@@ -49,10 +52,33 @@ class AuthController extends Controller
         ];
   
         Auth::attempt($data); //membuat Auth secara manual
+
+        $id="";
   
         if (Auth::check()) { // true sekalian session field di users nanti bisa dipanggil via Auth
             //Login Success
-            return redirect()->route('home');
+            $level = Auth::user()->level;
+            if($level=="siswa"){
+                $datalogin = Students::where("email",Auth::user()->email)->first();
+                $id = $datalogin->id;
+                session(['url' => "students-edit/".$id]);
+            }else if($level=="mentor"){
+                $datalogin = Mentors::where("email",Auth::user()->email)->first();
+                $id = $datalogin->id;
+                session(['url' => "mentor-edit/".$id]);
+            }else if($level=="guru"){
+                $datalogin = Teachers::where("email",Auth::user()->email)->first();
+                $id = $datalogin->id;
+                session(['url' => "teacher-edit/".$id]);
+            }else{
+                session(['url' => ""]);
+            }
+            if($level=="siswa"){
+                return redirect()->route('home_siswa');
+            }
+            else{
+                return redirect()->route('home');
+            }
   
         } else { // false
   
@@ -60,19 +86,6 @@ class AuthController extends Controller
             Session::flash('error', 'Email atau password salah');
             return redirect()->route('login');
         }
-
-        // if (Auth::user()->idLevel == 1 ) {
-        //     return redirect()->route('home');
-        // }
-        // elseif (Auth::user()->idLevel == 2 ) {
-        //     return redirect()->route('home');
-        // } 
-        // else { // false
-  
-        //     //Login Fail
-        //     Session::flash('error', 'Anda belum terdaftar');
-        //     return redirect()->route('login');
-        // }
     }
 
     public function showFormRegister()

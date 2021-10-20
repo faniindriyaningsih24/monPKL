@@ -12,6 +12,7 @@ use App\Http\Controllers\StudentsController;
 use App\Http\Controllers\DetailCompanyController;
 use App\Http\Controllers\JournalController;
 use App\Http\Controllers\PresensiController;
+use App\Http\Controllers\infoPKLController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,6 +37,7 @@ Route::post('register', [AuthController::class, 'register']);
 Route::group(['middleware' => 'auth'], function () {
 
     Route::get('home', [PagesController::class, 'home'])->name('home');
+    Route::get('home_siswa', [PagesController::class, 'home_siswa'])->name('home_siswa');
     Route::get('logout', [AuthController::class, 'logout'])->name('logout');
     
     //routing perusahaan
@@ -52,6 +54,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('update-student/{id}', [StudentsController::class, 'update'])->name('students.update');
     Route::get('delete-student/{id}', [StudentsController::class, 'destroy']);
     Route::get('show-student/{id}', [StudentsController::class, 'show']);
+    Route::get('students/importView', [StudentsController::class, 'importView']);
+    Route::post('import', [StudentsController::class, 'import'])->name('import');
 
     //routing mentor
     Route::get('mentors', [MentorController::class, 'index'])->name('mentors');
@@ -84,7 +88,12 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('presensi-edit/{id}', [PresensiController::class, 'edit']);
     Route::post('update-presensi/{id}', [PresensiController::class, 'update'])->name('presensi.update');
 
-
+    //routing info PKL
+    Route::get('infoPKL', [infoPKLController::class, 'indexAll']);
+    Route::get('/show/{id}', [infoPKLController::class, 'show']);
+    Route::get('infoPKL/infoPKLMentor', [infoPKLController::class, 'infoPKLMentor']);
+    Route::get('infoPKL/infoPKLTeachers', [infoPKLController::class, 'infoPKLTeachers']);
+    Route::get('infoPKL/infoPKLSiswa', [infoPKLController::class, 'infoPKLSiswa']);
 });
 
 //HAK AKSES ADMIN
