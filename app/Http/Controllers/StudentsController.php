@@ -5,6 +5,11 @@ namespace App\Http\Controllers;
 use App\Models\Students;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use App\Imports\ImportStudents;
+use App\Models\User;
+use Hash;
+use Maatwebsite\Excel\Facades\Excel;
+use Psy\ExecutionClosure;
 
 class StudentsController extends Controller
 {
@@ -145,7 +150,7 @@ class StudentsController extends Controller
         $student = Students::find($request->id);
 
         if( $request->hasFile('photoSiswa') ) {
-            unlink(public_path('images').'/'.$student->photoSiswa);
+            //unlink(public_path('images').'/'.$student->photoSiswa);
             $pasFoto = $request->file('photoSiswa');
             $pasFotoName = mt_rand(1000000, 9999999) . '.' . $pasFoto->extension();
             $pasFoto->move( public_path('images'), $pasFotoName );
@@ -153,7 +158,7 @@ class StudentsController extends Controller
         }
 
         if( $request->hasFile('parafSiswa') ) {
-            unlink(public_path('images').'/'.$student->parafSiswa);
+            //unlink(public_path('images').'/'.$student->parafSiswa);
             $paraf = $request->file('parafSiswa');
             $parafName = mt_rand(1000000, 9999999) . '.' . $paraf->extension();
             $paraf->move( public_path('images'), $parafName );
@@ -190,9 +195,42 @@ class StudentsController extends Controller
     public function destroy($id)
     {
         $student = Students::find($id);
-        unlink(public_path('images').'/'.$student->photoSiswa);
-        unlink(public_path('images').'/'.$student->parafSiswa);
-        $student->delete();        
+            //unlink(public_path('images').'/'.$student->photoSiswa);
+            //unlink(public_path('images').'/'.$student->parafSiswa);
+        User::where("email",$student->email)->delete();
+        $student->delete();
+       
         return redirect()->route('students')->with('success', 'Berhasil Menghapus Data Siswa');
+    }
+
+    public function importView()
+    {
+        return view('students.importView');
+    }
+    public function import()
+    {
+        Excel::import(new ImportStudents,request()->file('file')); //import ke DB student
+        $rows = Excel::toCollection(new ImportStudents, request()->file('file')); //data dari excel dibuat array 
+        //agar dapat dicreate ke table user
+        $row = collect($rows)->toArray();
+        foreach($row[0] as $key=>$value){
+            $cek = User::where("email",$value["email"])->first();//cek user ada apa tidak
+            if($cek==""){
+                //jika tidak ada create baru
+                $user = new User;
+                $user->name = ucwords(strtolower($value["namasiswa"]));
+                $user->email = strtolower($value["email"]);
+                $user->password = Hash::make("siswa1234");
+                $user->level = "siswa";
+                $user->email_verified_at = \Carbon\Carbon::now();
+                $simpan = $user->save();
+            }else{
+                //jika ada update passwordnya saja
+                $user = User::find($cek->id);
+                $user->password = Hash::make("siswa1234");
+                $simpan = $user->save();
+            }
+        }
+        return back()->with('success', 'Berhasil Import Data Siswa');
     }
 }

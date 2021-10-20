@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Mentors;
+use App\Models\User;
+use Hash;
 
 class MentorController extends Controller
 {
@@ -44,6 +46,16 @@ class MentorController extends Controller
         $mentor->parafMentors = $parafMentorName;
 
         $mentor->save();
+        
+        if($mentor->save()){
+            $user = new User;
+            $user->name = ucwords(strtolower($request->namaMentors));
+            $user->email = strtolower($request->email);
+            $user->password = Hash::make("mentor1234");
+            $user->level = "mentor";
+            $user->email_verified_at = \Carbon\Carbon::now();
+            $user->save();
+        }
 
         return redirect()->route('mentors')->with('success', 'Sukses Menambah Mentor');
     }

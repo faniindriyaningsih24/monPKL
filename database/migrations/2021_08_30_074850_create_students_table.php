@@ -18,8 +18,6 @@ class CreateStudentsTable extends Migration
             $table->string('nis');
             $table->string('namaSiswa');
             $table->string('kompetensiKeahlian');
-            $table->date('tglMulaiPKL');
-            $table->date('tglSelesaiPKL');
             $table->string('kelas');
             $table->string('tempatLahir');
             $table->date('tanggalLahir');    

@@ -65,6 +65,7 @@
                                             <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
                                         </div>
                                     </div>
+                                    <p><b> Silahkan rekam tanda tangan anda di </b><a href="https://createmysignature.com/">https://createmysignature.com/</a></p>
                                     <img id="previewImgParaf" width="150px" height="150px" class="mb-4" src="{{ asset('images') }}/{{ $teacher->parafGuru }}">
 
                                     <div class="input-group mb-4 mt-2">

@@ -142,6 +142,7 @@
                                             <label class="custom-file-label text-muted">jpeg/jpg/png format</label>
                                         </div>
                                     </div>
+                                    <p><b> Silahkan rekam tanda tangan anda di </b><a href="https://createmysignature.com/">https://createmysignature.com/</a></p>
                                     <img class="mb-4" id="previewImgParaf" src="{{ asset('images') }}/{{ $student->parafSiswa }}" width="120px" height="80px">
                                     <div class="input-group mb-4">
                                         <input type="submit" value="Ubah" class="btn btn-success mr-2">

@@ -45,7 +45,7 @@
             <div class="d-sm-none d-lg-inline-block">Hi, {{ Auth::user()->name }}</div></a>
             <div class="dropdown-menu dropdown-menu-right">
               <div class="dropdown-title"></div>
-              <a href="#" class="dropdown-item has-icon">
+              <a href="{{ Session::get('url') }}" class="dropdown-item has-icon">
                 <i class="far fa-user"></i> Profile - 
 
                 <!-- Start Setting Level Name  -->
@@ -72,10 +72,18 @@
       <div class="main-sidebar sidebar-style-2">
         <aside id="sidebar-wrapper">
           <div class="sidebar-brand">
-            <a href="{{ route('home') }}">
-            <img src="{{ url('assets/img/monpkl.jpeg') }}" alt="logo" class="rounded-circle" width="70px">
-            monPKL
-            </a>
+            @if (auth()->user()->level == "siswa")
+              <a href="{{ route('home_siswa') }}">
+              <img src="{{ url('assets/img/monpkl.jpeg') }}" alt="logo" class="rounded-circle" width="70px">
+              monPKL
+              </a>    
+            @else
+              <a href="{{ route('home') }}">
+              <img src="{{ url('assets/img/monpkl.jpeg') }}" alt="logo" class="rounded-circle" width="70px">
+              monPKL
+              </a>
+            @endif
+                
           </div>
           <!-- Menu  -->
           <div class="sidebar-brand sidebar-brand-sm">
@@ -83,25 +91,30 @@
           </div>
           <ul class="sidebar-menu">
             <li class="menu-header">Dashboard</li>
-            <li><a class="nav-link" href="{{ route('home') }}"><i class="fas fa-columns"></i> <span>Dashboard</span></a></li>
+            @if (auth()->user()->level == "siswa")
+              <li><a class="nav-link" href="{{ route('home_siswa') }}"><i class="fas fa-columns"></i> <span>Dashboard</span></a></li>
+            @else
+              <li><a class="nav-link" href="{{ route('home') }}"><i class="fas fa-columns"></i> <span>Dashboard</span></a></li>
+            @endif
             <li class="menu-header">Pages</li>
         
             <!-- Start setting navigation  -->
             @if (auth()->user()->level == "admin")
               <li><a class="nav-link" href="/companies"><i class="fas fa-building"></i> <span>Perusahaan</span></a></li>
               <li><a class="nav-link" href="/students"><i class="fas fa-user-graduate"></i> <span>Siswa</span></a></li>
+              <li><a class="nav-link" href="students/importView"><i class="fas fa-user-graduate"></i> <span>Import Data Siswa</span></a></li>
               <li><a class="nav-link" href="/mentors"><i class="fas fa-people-carry"></i> <span>Mentor</span></a></li>
               <li><a class="nav-link" href="/teachers"><i class="fas fa-chalkboard-teacher"></i> <span>Guru</span></a></li>
               <li><a class="nav-link" href="/company-detail"><i class="fas fa-city"></i> <span>Detail Perusahaan</span></a></li>
-              <li><a class="nav-link" href=""><i class="fas fa-building"></i> <span>Info PKL</span></a></li>
-              @elseif(auth()->user()->level == "guru")
-              <li><a class="nav-link" href=""><i class="fas fa-building"></i> <span>Info PKL</span></a></li>
+              <li><a class="nav-link" href="/infoPKL"><i class="fas fa-building"></i> <span>Info PKL</span></a></li>
+            @elseif(auth()->user()->level == "guru")
+              <li><a class="nav-link" href="/infoPKL/infoPKLTeachers"><i class="fas fa-building"></i> <span>Info PKL</span></a></li>
             @elseif(auth()->user()->level == "mentor")
-              <li><a class="nav-link" href=""><i class="fas fa-building"></i> <span>Info PKL</span></a></li>
+              <li><a class="nav-link" href="/infoPKL/infoPKLMentor"><i class="fas fa-building"></i> <span>Info PKL</span></a></li>
               <li><a class="nav-link" href="/presensi"><i class="fas fa-building"></i> <span>Acc Presensi</span></a></li>
               <li><a class="nav-link" href="/journal"><i class="fas fa-building"></i> <span>Acc Jurnal</span></a></li>
             @elseif(auth()->user()->level == "siswa") 
-              <li><a class="nav-link" href=""><i class="fas fa-building"></i> <span>Info PKL</span></a></li>
+              <li><a class="nav-link" href="infoPKL/infoPKLSiswa"><i class="fas fa-building"></i> <span>Info PKL</span></a></li>
               <li><a class="nav-link" href="/presensi"><i class="fas fa-building"></i> <span>Presensi</span></a></li>
               <li><a class="nav-link" href="/journal"><i class="fas fa-building"></i> <span>Jurnal</span></a></li>
             @endif
@@ -152,6 +165,17 @@
     image.src = URL.createObjectURL(event.target.files[0]);
   };
 
+  $(function(){
+    var url = document.location.toString();
+    if (url.match('#')) {
+      console.log(url.split('#')[1]);
+      $('a[href="#'+url.split('#')[1]+'"]').parent().addClass('active');
+      $('#'+url.split('#')[1]).addClass('active in')
+    }
+    $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+      window.location.hash = e.target.hash;
+    });
+  });
   </script>
 </body>
 </html>

@@ -51,8 +51,14 @@ class DetailCompanyController extends Controller
             'id_teacher' => 'required',
             'idMentors' => 'required'
         ] );
-        DetailCompany::create( $request->all() );
-        return redirect()->route('company-detail.index')->with('success', 'Sukses Menambah Data');
+        $ceksiswa = DetailCompany::where('idStudent',$request->input('idStudent'))->first();
+        if($ceksiswa){
+            return redirect()->route('company-detail.index')->with('failed', 'Siswa Sudah ditambahkan');
+        }else{
+            DetailCompany::create( $request->all() );
+            return redirect()->route('company-detail.index')->with('success', 'Sukses Menambah Data');
+        }
+       
     }
 
     /**
