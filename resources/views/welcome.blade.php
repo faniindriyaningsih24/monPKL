@@ -54,7 +54,7 @@
                     </ul>
                     <div class="form-inline my-2 my-lg-0">
                         @auth
-                            <a href="{{ url('/home') }}" class="btn btn-sm btn-info font-monospace bg-home">Home</a>
+                            <a href="{{ url('/home') }}" class="btn btn-sm btn-info font-monospace bg-home p-2">Home</a>
                         @else
                         <a href="{{ route('login') }}" class="bg-login btn btn-sm mr-2 font-monospace">Log in</a>
 
@@ -68,7 +68,7 @@
         </nav>
 
         <div id="particles-js"></div>
-        <div class="container mt-2">
+        <div class="container mt-5 mb-5 ">
             <div class="row">
                 <div class="col-lg-6 col-sm-12 mt-5">
                     <div class="mt-5"></div>
@@ -101,19 +101,15 @@
             </div>
         </div>
 
-        <div id="tawarkan-particles"></div>
-        <div class="container tawarkan">
-            <div class="row mt-5 mb-1">
-                <div class="col-12 text-center mt-5">
-                    <h1 id="tawarkan">Apa yang kami tawarkan?</h1>
-                </div>
-            </div>
-            <div class="row d-flex flex-wrap justify-content-center">
+        <div id="tawarkan-particles" class="mt-5 mb-5"></div>
+        <div class="container tawarkan mt-5">
+            <div class="mt-5" style="height: 1px;"></div>
+            <div class="row d-flex flex-wrap justify-content-center mt-5" id="tawarkan">
                 <div class="card col-md-4 col-lg-3 col-sm-12 mx-3 my-3 p-3 monpkl-card" style="width: 20rem;">
                     <img class="card-img-top" height="180px" src="{{ asset('assets/img/company.png') }}" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">Perusahaan</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <p class="card-text">Dapatkan informasi siswa yang melakukan praktek kerja industri di perusahaan tertentu.</p>
                         <a href="/login" class="btn btn-primary">Mulai</a>
                     </div>
                 </div>
@@ -121,7 +117,7 @@
                     <img class="card-img-top" height="180px" src="{{ asset('assets/img/teacher.png') }}" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">Guru</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <p class="card-text">Lihat perkembangan dan progres peserta didik selama praktek kerja industri di perusahaan.</p>
                         <a href="/login" class="btn btn-primary">Mulai</a>
                     </div>
                 </div>
@@ -129,7 +125,7 @@
                     <img class="card-img-top" height="180px" src="{{ asset('assets/img/student.png') }}" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">Siswa</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <p class="card-text">Informasi tempat prakerin, pembimbing, hingga laporan/jurnal prakerin.</p>
                         <a href="/login" class="btn btn-primary">Mulai</a>
                     </div>
                 </div>
@@ -137,7 +133,7 @@
                     <img class="card-img-top" height="180px" src="{{ asset('assets/img/mentor.png') }}" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">Pembimbing</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <p class="card-text">Monitoring siswa bimbingan selama prakerin agar lebih terorganisir.</p>
                         <a href="/login" class="btn btn-primary">Mulai</a>
                     </div>
                 </div>
@@ -145,18 +141,24 @@
                     <img class="card-img-top" height="180px" src="{{ asset('assets/img/company-detail.png') }}" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">Detail Perusahaan</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <p class="card-text">Tentukan pembimbing, guru, siswa, dan perusahaan tempat prakerin.</p>
                         <a href="/login" class="btn btn-primary">Mulai</a>
                     </div>
                 </div>
                 <div class="card col-md-4 col-lg-3 col-sm-12 mx-3 my-3 p-3 monpkl-card" style="width: 20rem;">
                     <img class="card-img-top" height="180px" src="{{ asset('assets/img/info-prakerin.png') }}" alt="Card image cap">
                     <div class="card-body">
-                        <h5 class="card-title">Info Prakerin</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <h5 class="card-text">Info Prakerin</h5>
+                        <p class="card-text">Informasi seputar tanggal prakerin hingga kontak pembimbing dan guru.</p>
                         <a href="/login" class="btn btn-primary">Mulai</a>
                     </div>
                 </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                
             </div>
         </div>
 
