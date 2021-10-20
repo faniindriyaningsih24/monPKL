@@ -29,7 +29,7 @@
             @endif
         </div> --}}
             {{-- <h1>ini halaman landing page</h1> --}}
-        <nav class="navbar navbar-expand-lg navbar-light bg-purple fixed-top">
+        {{-- <nav class="navbar navbar-expand-lg navbar-light bg-purple fixed-top">
             <div class="container">
                 <a class="navbar-brand" href="/">
                     <div class="login-brand">
@@ -53,26 +53,47 @@
                         </li>
                     </ul>
                     <div class="form-inline my-2 my-lg-0">
-                        @auth
-                            <a href="{{ url('/home') }}" class="btn btn-sm btn-info font-monospace bg-home p-2">Home</a>
-                        @else
-                        <a href="{{ route('login') }}" class="bg-login btn btn-sm mr-2 font-monospace">Log in</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="bg-regis btn btn-sm ml-2 font-monospace">Register</a>
-                        @endif
-                        @endauth
+                        
                     </div>
+                </div>
+            </div>
+        </nav> --}}
+        {{-- @auth
+            <a href="{{ url('/home') }}" class="btn btn-sm btn-info font-monospace bg-home p-2">Home</a>
+        @else
+        <a href="{{ route('login') }}" class="bg-login btn btn-sm mr-2 font-monospace">Log in</a>
+
+        @if (Route::has('register'))
+            <a href="{{ route('register') }}" class="bg-regis btn btn-sm ml-2 font-monospace">Register</a>
+        @endif
+        @endauth --}}
+        <!-- Just an image -->
+        <nav class="shadow-sm navbar-sm navbar navbar-light bg-purple">
+            <div class="container">
+                <a class="navbar-brand" href="/">
+                    <img src="assets/img/monpkl.jpeg" width="70" height="70" alt="">
+                </a>
+                <div class="form-inline my-2 my-lg-0">
+                    @auth
+                        <a href="{{ url('/home') }}" class="btn btn-sm mr-2 font-monospace bg-home p-2">Home</a>
+                        <a href="{{ url('/logout') }}" class="btn btn-sm ml-2 font-monospace bg-logout p-2">Logout</a>
+                    @else
+                    <a href="{{ route('login') }}" class="bg-login btn btn-sm mr-2 font-monospace">Log in</a>
+
+                    @if (Route::has('register'))
+                        <a href="{{ route('register') }}" class="bg-regis btn btn-sm ml-2 font-monospace">Register</a>
+                    @endif
+                    @endauth
                 </div>
             </div>
         </nav>
 
         <div id="particles-js"></div>
-        <div class="container mt-5 mb-5 ">
+        <div class="container mb-5 ">
             <div class="row">
                 <div class="col-lg-6 col-sm-12 mt-5">
-                    <div class="mt-5"></div>
-                    <div class="mt-5"></div>
+                    {{-- <div class="mt-5"></div>
+                    <div class="mt-5"></div> --}}
                     <div class="alert alert-purple mt-2" role="alert">
                         Monitoring Prakerin Anti Ruwet!
                     </div>
@@ -102,8 +123,8 @@
         </div>
 
         <div id="tawarkan-particles" class="mt-5 mb-5"></div>
-        <div class="container tawarkan mt-5">
-            <div class="mt-5" style="height: 1px;"></div>
+        <div class="container tawarkan mt-2 mb-5">
+            {{-- <div class="mt-5" style="height: 1px;"></div> --}}
             <div class="row d-flex flex-wrap justify-content-center mt-5" id="tawarkan">
                 <div class="card col-md-4 col-lg-3 col-sm-12 mx-3 my-3 p-3 monpkl-card" style="width: 20rem;">
                     <img class="card-img-top" height="180px" src="{{ asset('assets/img/company.png') }}" alt="Card image cap">
@@ -156,11 +177,9 @@
             </div>
         </div>
 
-        <div class="container">
-            <div class="row">
-                
-            </div>
-        </div>
+        <footer class="footer text-center py-4 bg-footer text-white">
+            &copy; SMKN 1 Cibinong 2021
+        </footer>
 
 
 

@@ -11,36 +11,54 @@ body {
 }
 
 .bg-purple {
-    background-color: #B8B5FF;
+    /* background-color: #fff; */
     font-family: monospace;
     font-weight: bold;
-    
+    /* box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.336); */
+    background-color: #ffffff;
 }
 
 .bg-login {
-    background-color: #4B3869;
+    background-color: #63a4ff;
+background-image: linear-gradient(315deg, #63a4ff 0%, #83eaf1 74%);
+border: none;
     color: white;
     font-weight: bold;    
     border-radius: 15px;
-    padding: 6px;
+    padding: 10px;
     box-shadow: 1px 1.1px 1.2px 1.3px rgba(82, 81, 81, 0.479);
 }
 
 .bg-regis {
-    background-color: #63B4B8;
+    background-color: #f5d020;
+background-image: linear-gradient(315deg, #f5d020 0%, #f53803 74%);
+border: none;
     color: white;
     font-weight: bold;
     border-radius: 15px;
-    padding: 6px;
+    padding: 10px;
     box-shadow: 1px 1.1px 1.2px 1.3px rgba(82, 81, 81, 0.479);
 }
 
 .bg-home {
-    background-color: #1C0C5B;
+    background-color: #d4418e;
+background-image: linear-gradient(315deg, #d4418e 0%, #0652c5 74%); border: none;
     color: white;
     font-weight: bold;
     border-radius: 15px;
-    padding: 6px;
+    padding: 10px;
+    box-shadow: 1px 1.1px 1.2px 1.3px rgba(82, 81, 81, 0.479);
+}
+
+.bg-logout {
+    background-color: #6b0f1a;
+background-image: linear-gradient(315deg, #6b0f1a 0%, #b91372 74%);
+border: none;
+
+    color: white;
+    font-weight: bold;
+    border-radius: 15px;
+    padding: 10px;
     box-shadow: 1px 1.1px 1.2px 1.3px rgba(82, 81, 81, 0.479);
 }
 
@@ -50,7 +68,7 @@ body {
 }
 
 .monitoring {
-    background-color: #7868E6;
+    /* background-color: #7868E6; */
     padding: 10px 20px;
     color: white;
     margin-top: 10px;
@@ -58,7 +76,10 @@ body {
     display: inline-block;
     border-radius: 25px;
     box-shadow: 1px 2px 2px 2px rgba(82, 81, 81, 0.452);
-    opacity: .8;
+    opacity: 1;
+    background-color: #f8ceec;
+background-image: linear-gradient(315deg, #f8ceec 0%, #a88beb 74%);
+
 }
 
 .siswa {
@@ -74,24 +95,31 @@ body {
 
 .btn-mulai {
     border-radius: 25px;
-    background-color: #A12568;
+    /* background-color: #A12568; */
     color: white;
     font-weight: bold;
     padding: 12px;
     display: inline-block;
     box-shadow: 1px 1.3px 1.4px 1.5px rgba(82, 81, 81, 0.377);
     opacity: .9;
+    background-color: #42378f;
+background-image: linear-gradient(315deg, #42378f 0%, #f53844 74%);
+border: none;
 }
 
 .btn-pelajari {
     border-radius: 25px;
-    background-color: #00C1D4;
+    /* background-color: #00C1D4; */
     color: white;
     font-weight: bold;
     padding: 12px;
     display: inline-block;
     box-shadow: 1px 1.3px 1.4px 1.5px rgba(82, 81, 81, 0.377);
     opacity: .9;
+    background-color: #045de9;
+background-image: linear-gradient(315deg, #045de9 0%, #09c6f9 74%);
+
+border: none;
 }
 
 
@@ -105,4 +133,11 @@ body {
     background-color: #7868E6;
     border: none;
     box-shadow: 1px 1.3px 1.4px 1.5px rgba(82, 81, 81, 0.377);
+}
+
+.bg-footer {
+    background-color: #f8ceec;
+    background-image: linear-gradient(315deg, #f8ceec 0%, #a88beb 74%);
+    font-size: 1.2em;
+    font-weight: bold;
 }

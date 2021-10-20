@@ -42,7 +42,7 @@
                                 <td valign="top">Siswa </td><td>:</td> <td>
                                     <ol>
                                     @foreach($siswa as $rows)
-                                       <li> {{ $rows->siswa["namaSiswa"] }} <a href="/show/{{ $rows->siswa['id'] }}">Lihat</a></li> 
+                                       <li> {{ $rows->siswa["namaSiswa"] }} <a href="/show/{{ $rows->siswa['id'] }}" class="btn btn-sm btn-info my-2 ml-2"><i class="far fa-eye"></i></a></li> 
                                     @endforeach
                                     </ol>
                                 </td>
