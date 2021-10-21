@@ -15,7 +15,16 @@ class PagesController extends Controller
     //Memanggil view home
     public function home()
     {
-        return view('home');
+        $perusahaan = Company::all()->count();
+        $siswa = Students::all()->count();
+        $guru = Teachers::all()->count();
+        $mentor = Mentors::all()->count();
+        $prakerin = DetailCompany::join("companies as c",'c.id','=','company_details.idCompany')
+        ->join("teachers as d",'d.id','=','company_details.id_teacher')
+        ->select("namaPerusahaan","namaGuru",'tglMulaiPKL','tglSelesaiPKL','id_teacher','idCompany','idMentors')
+        ->distinct()
+        ->count();
+        return view('home', compact('perusahaan', 'siswa', 'guru', 'mentor', 'prakerin'));
     }
     public function home_siswa()
     {
