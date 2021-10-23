@@ -103,7 +103,7 @@
             @if (auth()->user()->level == "admin")
               <li><a class="nav-link" href="/companies"><i class="fas fa-building"></i> <span>Perusahaan</span></a></li>
               <li><a class="nav-link" href="/students"><i class="fas fa-user-graduate"></i> <span>Siswa</span></a></li>
-              <li><a class="nav-link" href="/students/importView"><i class="fas fa-user-graduate"></i> <span>Import Data Siswa</span></a></li>
+              {{-- <li><a class="nav-link" href="/students/importView"><i class="fas fa-user-graduate"></i> <span>Import Data Siswa</span></a></li> --}}
               <li><a class="nav-link" href="/mentors"><i class="fas fa-people-carry"></i> <span>Mentor</span></a></li>
               <li><a class="nav-link" href="/teachers"><i class="fas fa-chalkboard-teacher"></i> <span>Guru</span></a></li>
               <li><a class="nav-link" href="/company-detail"><i class="fas fa-city"></i> <span>Detail Perusahaan</span></a></li>

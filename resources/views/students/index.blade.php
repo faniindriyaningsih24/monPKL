@@ -17,7 +17,8 @@
         </div>
         @endif
 
-        <a href="students/create" class="btn btn-sm btn-info mb-3 fa fa-plus px-2"></a>
+        <a href="students/create" class="btn btn-sm btn-info mb-3 fa fa-plus px-2 mr-2"></a>
+        <a href="/students/importView" class="btn btn-sm btn-success mb-3 px-2 ml-2"><i class="fas fa-file-import"></i></a>
         <div class="col-md-12">
             <div class="table-responsive">
                 <table class="table table-bordered">
